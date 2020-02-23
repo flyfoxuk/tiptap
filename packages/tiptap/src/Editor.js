@@ -217,7 +217,7 @@ export default class Editor extends Emitter {
         new Plugin({
           props: {
             attributes: {
-              tabindex: 0,
+              tabindex: -1,
             },
             handleDOMEvents: {
               focus: (view, event) => {
