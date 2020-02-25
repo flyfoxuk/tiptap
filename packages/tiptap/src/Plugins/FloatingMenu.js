@@ -21,10 +21,12 @@ class Menu {
     this.options.element.addEventListener('mousedown', this.mousedownHandler)
 
     this.options.editor.on('focus', ({ view }) => {
+        //console.log('::FloatingMenu: editor focus event', view)
       this.update(view)
     })
 
     this.options.editor.on('blur', ({ event }) => {
+        //console.log('::FloatingMenu: editor blur event', event)
       if (this.preventHide) {
         this.preventHide = false
         return
@@ -46,7 +48,8 @@ class Menu {
   }
 
   handleClick() {
-    this.preventHide = true
+    //console.log('::FloatingMenu: handle click')
+    this.preventHide = false  // CMB changed this to false from true because of interation with floating and bubble menus problem
   }
 
   update(view, lastState) {
@@ -58,6 +61,7 @@ class Menu {
     }
 
     if (!state.selection.empty) {
+        //console.log('::FloatingMenu: stateselection not empty')
       this.hide()
       return
     }
@@ -69,6 +73,7 @@ class Menu {
       && currentDom.node.parentNode === view.dom
 
     if (!isActive) {
+        console.log('::FloatingMenu: !isActive, hiding')
       this.hide()
       return
     }
@@ -76,6 +81,7 @@ class Menu {
     const parent = this.options.element.offsetParent
 
     if (!parent) {
+        //console.log('::FloatingMenu: !parent, hiding')
       this.hide()
       return
     }

@@ -74,10 +74,12 @@ class Menu {
     this.options.element.addEventListener('mousedown', this.mousedownHandler)
 
     this.options.editor.on('focus', ({ view }) => {
+        //console.log('::MenuBubble: focus event', view)
       this.update(view)
     })
 
     this.options.editor.on('blur', ({ event }) => {
+        //console.log('::MenuBubble: blur event', event, this.preventHide)
       if (this.preventHide) {
         this.preventHide = false
         return
@@ -88,6 +90,7 @@ class Menu {
   }
 
   handleClick() {
+    //console.log('::MenuBubble: handle click')
     this.preventHide = true
   }
 
@@ -105,6 +108,7 @@ class Menu {
 
     // Hide the tooltip if the selection is empty
     if (state.selection.empty) {
+        //console.log('::MenuBubble: state.selection.empty, hiding')
       this.hide()
       return
     }
@@ -121,7 +125,10 @@ class Menu {
     // The box in which the tooltip is positioned, to use as base
     const parent = this.options.element.offsetParent
 
+    //console.log('::MenuBubble: Update, parent=', parent)
+
     if (!parent) {
+        //console.log('::MenuBubble: !parent, hiding')
       this.hide()
       return
     }
