@@ -86,6 +86,7 @@ export default class Table extends Node {
   }
 
   get plugins() {
+      console.log('--------------------- TIPTAP TABLE.JS: called get plugins()')
     return [
       ...(this.options.resizable ? [columnResizing()] : []),
       tableEditing(),
