@@ -101,6 +101,10 @@ class Menu {
       return
     }
 
+    if (this.options.element.className.includes('prevent-menu-bubble-updates')) {
+        return
+    }
+
     // Don't do anything if the document/selection didn't change
     if (lastState && lastState.doc.eq(state.doc) && lastState.selection.eq(state.selection)) {
       return
@@ -125,7 +129,7 @@ class Menu {
     // The box in which the tooltip is positioned, to use as base
     const parent = this.options.element.offsetParent
 
-    console.log('::MenuBubble: Update, this.options.element=', this.options.element)
+    //console.log('::MenuBubble: Update, this.options.element=', this.options.element)
     //console.log('::MenuBubble: Update, parent=', parent)
 
     //console.log('::MenuBubble: Update, parent scroll =', )
