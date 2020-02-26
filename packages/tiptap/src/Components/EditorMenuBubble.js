@@ -37,6 +37,7 @@ export default {
               editor,
               element: this.$el,
               keepInBounds: this.keepInBounds,
+              Yoffset: this.Yoffset,
               onUpdate: menu => {
                 // the second check ensures event is fired only once
                 if (menu.isActive && this.menu.isActive === false) {
