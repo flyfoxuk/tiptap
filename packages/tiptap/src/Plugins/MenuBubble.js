@@ -154,7 +154,7 @@ class Menu {
     this.options.onUpdate({
       isActive: this.isActive,
       left: this.left,
-      bottom: this.bottom,
+      bottom: this.bottom + this.Yoffset,
       top: this.top,
     })
   }
