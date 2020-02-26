@@ -74,12 +74,12 @@ class Menu {
     this.options.element.addEventListener('mousedown', this.mousedownHandler)
 
     this.options.editor.on('focus', ({ view }) => {
-      console.log('::MenuBubble: focus event', view)
+      //console.log('::MenuBubble: focus event', view)
       this.update(view)
     })
 
     this.options.editor.on('blur', ({ event }) => {
-      console.log('::MenuBubble: blur event', event, this.preventHide)
+      //console.log('::MenuBubble: blur event', event, this.preventHide)
       if (this.preventHide) {
         this.preventHide = false
         return
@@ -90,7 +90,7 @@ class Menu {
   }
 
   handleClick() {
-    console.log('::MenuBubble: handle click')
+    //console.log('::MenuBubble: handle click')
     this.preventHide = true
   }
 
@@ -99,10 +99,6 @@ class Menu {
 
     if (view.composing) {
       return
-    }
-
-    if (this.options.element.className.includes('prevent-menu-bubble-updates')) {
-        return
     }
 
     // Don't do anything if the document/selection didn't change

@@ -73,7 +73,7 @@ class Menu {
       && currentDom.node.parentNode === view.dom
 
     if (!isActive) {
-        console.log('::FloatingMenu: !isActive, hiding')
+        //console.log('::FloatingMenu: !isActive, hiding')
       this.hide()
       return
     }
