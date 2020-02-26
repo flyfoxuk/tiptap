@@ -125,9 +125,9 @@ class Menu {
     // The box in which the tooltip is positioned, to use as base
     const parent = this.options.element.offsetParent
 
-    console.log('::MenuBubble: Update, parent=', parent)
+    //console.log('::MenuBubble: Update, parent=', parent)
 
-    console.log('::MenuBubble: Update, parent scroll =', parent.scrollTop)
+    //console.log('::MenuBubble: Update, parent scroll =', )
 
     if (!parent) {
         //console.log('::MenuBubble: !parent, hiding')
@@ -138,9 +138,9 @@ class Menu {
     const box = parent.getBoundingClientRect()
     const el = this.options.element.getBoundingClientRect()
 
-    console.log('::MenuBubble: box=', box)
-    console.log('::MenuBubble: el=', el)
-    console.log('::MenuBubble: start=', start)
+    //console.log('::MenuBubble: box=', box)
+    //console.log('::MenuBubble: el=', el)
+    //console.log('::MenuBubble: start=', start)
 
 
 
@@ -151,7 +151,7 @@ class Menu {
     // Keep the menuBubble in the bounding box of the offsetParent i
     this.left = Math.round(this.options.keepInBounds
         ? Math.min(box.width - (el.width / 2), Math.max(left, el.width / 2)) : left)
-    this.bottom = Math.round(box.bottom - start.top)
+    this.bottom = Math.round(box.bottom - start.top - parent.scrollTop)
     this.top = Math.round(end.bottom - box.top)
     this.isActive = true
 
