@@ -74,12 +74,12 @@ class Menu {
     this.options.element.addEventListener('mousedown', this.mousedownHandler)
 
     this.options.editor.on('focus', ({ view }) => {
-        //console.log('::MenuBubble: focus event', view)
+      console.log('::MenuBubble: focus event', view)
       this.update(view)
     })
 
     this.options.editor.on('blur', ({ event }) => {
-        //console.log('::MenuBubble: blur event', event, this.preventHide)
+      console.log('::MenuBubble: blur event', event, this.preventHide)
       if (this.preventHide) {
         this.preventHide = false
         return
@@ -90,7 +90,7 @@ class Menu {
   }
 
   handleClick() {
-    //console.log('::MenuBubble: handle click')
+    console.log('::MenuBubble: handle click')
     this.preventHide = true
   }
 
