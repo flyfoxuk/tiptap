@@ -36,6 +36,7 @@ export default {
               onUpdate: menu => {
                 // the second check ensures event is fired only once
                 if (menu.isActive && this.menu.isActive === false) {
+                    menu.bottom -= Yoffset
                   this.$emit('show', menu)
                 } else if (!menu.isActive && this.menu.isActive === true) {
                   this.$emit('hide', menu)
