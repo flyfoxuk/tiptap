@@ -127,6 +127,8 @@ class Menu {
 
     console.log('::MenuBubble: Update, parent=', parent)
 
+    console.log('::MenuBubble: Update, parent scroll =', parent.scrollTop)
+
     if (!parent) {
         //console.log('::MenuBubble: !parent, hiding')
       this.hide()
@@ -139,6 +141,8 @@ class Menu {
     console.log('::MenuBubble: box=', box)
     console.log('::MenuBubble: el=', el)
     console.log('::MenuBubble: start=', start)
+
+
 
     // Find a center-ish x position from the selection endpoints (when
     // crossing lines, end may be more to the left)
