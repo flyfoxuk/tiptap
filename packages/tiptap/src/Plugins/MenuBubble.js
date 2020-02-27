@@ -151,7 +151,7 @@ class Menu {
     // Keep the menuBubble in the bounding box of the offsetParent i
     this.left = Math.round(this.options.keepInBounds
         ? Math.min(box.width - (el.width / 2), Math.max(left, el.width / 2)) : left)
-    this.bottom = Math.round(box.bottom - start.top)// - parent.scrollTop)
+    this.bottom = Math.round(box.bottom - start.top - parent.scrollTop)
     this.top = Math.round(end.bottom - box.top)
     this.isActive = true
 
@@ -162,7 +162,7 @@ class Menu {
     this.options.onUpdate({
       isActive: this.isActive,
       left: this.left,
-      bottom: this.bottom - this.options.Yoffset,
+      bottom: this.bottom,// - this.options.Yoffset,
       top: this.top,
     })
   }
