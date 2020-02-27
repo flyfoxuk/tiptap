@@ -125,9 +125,9 @@ class Menu {
     // The box in which the tooltip is positioned, to use as base
     const parent = this.options.element.offsetParent
 
-    console.log('::MenuBubble: Update, this.options.element=', this.options.element)
-    console.log('::MenuBubble: Update, parent=', parent)
-    console.log('::MenuBubble: Update, parent scroll =', parent.scrollTop)
+    // console.log('::MenuBubble: Update, this.options.element=', this.options.element)
+    // console.log('::MenuBubble: Update, parent=', parent)
+    // console.log('::MenuBubble: Update, parent scroll =', parent.scrollTop)
 
     if (!parent) {
         //console.log('::MenuBubble: !parent, hiding')
@@ -138,9 +138,9 @@ class Menu {
     const box = parent.getBoundingClientRect()
     const el = this.options.element.getBoundingClientRect()
 
-    console.log('::MenuBubble: box=', box)
-    console.log('::MenuBubble: el=', el)
-    console.log('::MenuBubble: start=', start)
+    // console.log('::MenuBubble: box=', box)
+    // console.log('::MenuBubble: el=', el)
+    // console.log('::MenuBubble: start=', start)
 
 
 
