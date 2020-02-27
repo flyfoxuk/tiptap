@@ -125,10 +125,9 @@ class Menu {
     // The box in which the tooltip is positioned, to use as base
     const parent = this.options.element.offsetParent
 
-    //console.log('::MenuBubble: Update, this.options.element=', this.options.element)
-    //console.log('::MenuBubble: Update, parent=', parent)
-
-    //console.log('::MenuBubble: Update, parent scroll =', )
+    console.log('::MenuBubble: Update, this.options.element=', this.options.element)
+    console.log('::MenuBubble: Update, parent=', parent)
+    console.log('::MenuBubble: Update, parent scroll =', parent.scrollTop)
 
     if (!parent) {
         //console.log('::MenuBubble: !parent, hiding')
