@@ -138,9 +138,9 @@ class Menu {
     const box = parent.getBoundingClientRect()
     const el = this.options.element.getBoundingClientRect()
 
-    //console.log('::MenuBubble: box=', box)
-    //console.log('::MenuBubble: el=', el)
-    //console.log('::MenuBubble: start=', start)
+    console.log('::MenuBubble: box=', box)
+    console.log('::MenuBubble: el=', el)
+    console.log('::MenuBubble: start=', start)
 
 
 
