@@ -17,6 +17,10 @@ import {
   toggleHeaderCell,
   setCellAttr,
   fixTables,
+
+  isInTable,
+  selectionCell,
+
 } from 'prosemirror-tables'
 import { createTable } from 'prosemirror-utils'
 import { TextSelection } from 'prosemirror-state'
@@ -75,6 +79,26 @@ export default class Table extends Node {
       toggleHeaderCell: () => toggleHeaderCell,
       setCellAttr: () => setCellAttr,
       fixTables: () => fixTables,
+      getCellAttr: () => (
+        (state, dispatch) => {
+            if (!isInTable(state)) return false
+            let $cell = selectionCell(state)
+            console.log('************** $cell', $cell)
+            // if ($cell.nodeAfter.attrs[name] === value) return false
+            // if (dispatch) {
+            //   let tr = state.tr
+            //   if (state.selection instanceof CellSelection)
+            //     state.selection.forEachCell((node, pos) => {
+            //       if (node.attrs[name] !== value)
+            //         tr.setNodeMarkup(pos, null, setAttr(node.attrs, name, value))
+            //     })
+            //   else
+            //     tr.setNodeMarkup($cell.pos, null, setAttr($cell.nodeAfter.attrs, name, value))
+            //   dispatch(tr)
+            // }
+            return true
+          }
+      )
     }
   }
 

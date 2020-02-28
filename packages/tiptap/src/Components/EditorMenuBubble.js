@@ -67,6 +67,7 @@ export default {
       isActive: this.editor.isActive,
       getMarkAttrs: this.editor.getMarkAttrs.bind(this.editor),
       menu: this.menu,
+      
     })
   },
 
