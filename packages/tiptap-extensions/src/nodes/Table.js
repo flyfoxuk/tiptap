@@ -79,12 +79,13 @@ export default class Table extends Node {
       toggleHeaderCell: () => toggleHeaderCell,
       setCellAttr: () => setCellAttr,
       fixTables: () => fixTables,
-      getCellAttr: () => (
+      getCellAttr: (name) => (
         (state, dispatch) => {
             if (!isInTable(state)) return false
             let $cell = selectionCell(state)
             console.log('************** $cell', $cell)
-            // if ($cell.nodeAfter.attrs[name] === value) return false
+            return $cell.nodeAfter.attrs
+            //if ($cell.nodeAfter.attrs[name] === value) return false
             // if (dispatch) {
             //   let tr = state.tr
             //   if (state.selection instanceof CellSelection)
